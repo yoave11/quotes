@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h1 class="text-center">Who's quote is it??</h1>
+  <blockquote cite="http://developer.mozilla.org" class="prim">
+    <p>{{quoteQuestion.quotes[0].quote}}</p>
+  </blockquote>
+  <quote-person-displayer [persons]="quoteQuestion.persons" [correctAnswer]="quoteQuestion.quotes[0].answer"></quote-person-displayer>
+</div>
+

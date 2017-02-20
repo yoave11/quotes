@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { QuoteDisplayerComponent } from './quote-displayer/quote-displayer.component';
+import { PersonDisplayerComponent } from './person-displayer/person-displayer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuoteDisplayerComponent,
+    PersonDisplayerComponent
   ],
   imports: [
     BrowserModule,

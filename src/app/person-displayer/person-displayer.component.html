@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <a class="list-group-item"
+     [ngClass]="{'list-group-item-success': isChosenPerson(i),'list-group-item-danger': isWrongPerson(i),'disable':isClicked==true}"
+     *ngFor="let p of persons; let i=index" (click)="onChoosePerson(i)">{{p.name}}</a>
+</ul>
