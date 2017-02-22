@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, Input, EventEmitter, Output, OnChanges, SimpleChanges} from "@angular/core";
 import {Person} from "../person";
 
 @Component({
@@ -6,10 +6,16 @@ import {Person} from "../person";
   templateUrl: './person-displayer.component.html',
   styles: ['a.disable{pointer-events: none;cursor: default;}']
 })
-export class PersonDisplayerComponent implements OnInit {
+export class PersonDisplayerComponent implements OnChanges {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.isClicked = false;
+    this.personSelected = -1;
+    console.log(changes);
+  }
 
   @Input() persons: Person[];
   @Input() correctAnswer: number;
+  @Output() selectedPerson = new EventEmitter<number>();
   isClicked: boolean;
   personSelected = -1;
 
@@ -22,6 +28,7 @@ export class PersonDisplayerComponent implements OnInit {
   onChoosePerson(index: number) {
     this.personSelected = index;
     this.isClicked = true;
+    this.selectedPerson.emit(index);
   }
 
   isChosenPerson(index: number): boolean {
@@ -31,4 +38,6 @@ export class PersonDisplayerComponent implements OnInit {
   isWrongPerson(index: number): boolean {
     return index == this.personSelected && this.isClicked && index != this.correctAnswer;
   }
+
+
 }
