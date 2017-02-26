@@ -1,16 +1,18 @@
-import {Component} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import {QuoteQuestion} from "../quote-question";
 import {Quote} from "../quote";
 import {Person} from "../person";
+import {PersonDisplayerComponent} from "../person-displayer/person-displayer.component";
 
 @Component({
   selector: 'quote-quote-displayer',
   templateUrl: './quote-displayer.component.html',
-  styles: []
+  styleUrls: ['./person-displayer.component.css']
 })
 export class QuoteDisplayerComponent {
-  private quotes: Quote[] = [new Quote("who the fuck??", 0),
-    new Quote("Tiny chilrdren are not horses", 1),
+  @ViewChild(PersonDisplayerComponent) private personDisplayer:PersonDisplayerComponent;
+  private quotes: Quote[] = [new Quote("Build a wall!!", 0),
+    new Quote("Tiny chilrdren are not horses", 0),
     new Quote("ani amit schor?", 2),
     new Quote("ani amit schor!!", 1)];
   private quoteQuestion: QuoteQuestion =
@@ -27,6 +29,7 @@ export class QuoteDisplayerComponent {
   onNext() {
     this.imgPath = this.defaultImg;
     this.current++;
+    this.personDisplayer.ngOnChanges(null);
   }
 
   onSelectedPerson(index: number) {

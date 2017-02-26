@@ -1,0 +1,10 @@
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fix-size {
+  height: 50%;
+  width: 50%;
+}

@@ -1,11 +1,11 @@
 <div class="jumbotron">
   <h1 class="text-center">Who's quote is it??</h1>
-  <div class="center-block">
-      <img [src]="imgPath"
-           alt="question mark" class="img-responsive">
-      <blockquote class="prim">
-        <p>{{quoteQuestion.quotes[current].quote}}</p>
-      </blockquote>
+  <div class="text-center">
+    <img [src]="imgPath"
+         alt="question mark" class="img-responsive center fix-size">
+    <blockquote class="prim">
+      <p>{{quoteQuestion.quotes[current].quote}}</p>
+    </blockquote>
   </div>
   <quote-person-displayer [persons]="quoteQuestion.persons" [correctAnswer]="quoteQuestion.quotes[current].answer"
                           (selectedPerson)="onSelectedPerson($event)"></quote-person-displayer>
