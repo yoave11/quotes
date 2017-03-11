@@ -1,8 +1,12 @@
 <div class="jumbotron">
-  <h1 class="text-center">Who's quote is it??</h1>
-  <div class="text-center">
-    <img [src]="imgPath"
-         alt="question mark" class="img-responsive center fix-size">
+  <div class="page-header">
+    <h1 class="text-center">Who's quote is it??</h1>
+  </div>
+  <div class="text-center" >
+    <div >
+<quote-image-displayer [personImage]="imgPath" [defaultImage]="defaultImg" [clicked]="isSelected"></quote-image-displayer>
+    </div>
+
     <blockquote class="prim">
       <p>{{quoteQuestion.quotes[current].quote}}</p>
     </blockquote>

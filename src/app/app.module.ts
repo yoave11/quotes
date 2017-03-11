@@ -8,6 +8,9 @@ import { QuoteDisplayerComponent } from './quote-displayer/quote-displayer.compo
 import { PersonDisplayerComponent } from './person-displayer/person-displayer.component';
 import { HeaderComponent } from './header/header.component';
 import { AddQuoteComponent } from './add-quote/add-quote.component';
+import {routing} from "./app.routes";
+import { HomeComponent } from './home/home.component';
+import { ImageDisplayerComponent } from './image-displayer/image-displayer.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { AddQuoteComponent } from './add-quote/add-quote.component';
     QuoteDisplayerComponent,
     PersonDisplayerComponent,
     HeaderComponent,
-    AddQuoteComponent
+    AddQuoteComponent,
+    HomeComponent,
+    ImageDisplayerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
