@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" >
   <div class="page-header">
     <h1 class="text-center">Who's quote is it??</h1>
   </div>
@@ -8,10 +8,10 @@
     </div>
 
     <blockquote class="prim">
-      <p>{{quoteQuestion.quotes[current].quote}}</p>
+      <p>{{quoteQuestion?.quotes[current].quote}}</p>
     </blockquote>
   </div>
-  <quote-person-displayer [persons]="quoteQuestion.persons" [correctAnswer]="quoteQuestion.quotes[current].answer"
+  <quote-person-displayer [persons]="quoteQuestion?.persons" [correctAnswer]="quoteQuestion?.quotes[current].answer"
                           (selectedPerson)="onSelectedPerson($event)"></quote-person-displayer>
   <button type="button" class="btn btn-primary" (click)="onNext()">Next</button>
 </div>

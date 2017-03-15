@@ -11,6 +11,9 @@ import { AddQuoteComponent } from './add-quote/add-quote.component';
 import {routing} from "./app.routes";
 import { HomeComponent } from './home/home.component';
 import { ImageDisplayerComponent } from './image-displayer/image-displayer.component';
+import {QuoteService} from "./quote-service.service";
+import { SelectQuoteComponent } from './select-quote/select-quote.component';
+import { QuoteGameListComponent } from './quote-game-list/quote-game-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { ImageDisplayerComponent } from './image-displayer/image-displayer.compo
     HeaderComponent,
     AddQuoteComponent,
     HomeComponent,
-    ImageDisplayerComponent
+    ImageDisplayerComponent,
+    SelectQuoteComponent,
+    QuoteGameListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,7 @@ import { ImageDisplayerComponent } from './image-displayer/image-displayer.compo
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
